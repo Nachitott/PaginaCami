@@ -1,0 +1,173 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('fondo.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+
+    background-color: #1a1a1a; /* Fondo oscuro para que resalte la carta */
+    color: #f4f4f4;
+    font-family: 'Georgia', serif;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;*/
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Contenedor principal de la carta */
+.hoja-quemada {
+    background-color: #f2e8c9; /* Color pergamino */
+    color: #333;
+    padding: 50px; /* Más espacio para que el texto no toque los bordes "quemados" */
+    max-width: 500px;
+    margin: 20px auto;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    
+    /* Efecto de borde irregular más seguro */
+    border: 1px solid #3d2b1f;
+    border-radius: 2px;
+    
+    /* Eliminamos el clip-path complejo y usamos uno más sencillo */
+    clip-path: polygon(
+        2% 0%, 98% 1%, 100% 4%, 99% 95%, 97% 100%, 
+        45% 98%, 3% 100%, 0% 95%, 1% 5%
+    );
+}
+
+/* El contenido real de la carta */
+.contenido-carta {
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté por encima de cualquier sombra */
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Efecto de bordes oscurecidos (quemados) */
+.hoja-quemada::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Degradado circular para simular quemado en los bordes */
+    background: radial-gradient(circle, transparent 60%, rgba(61, 43, 31, 0.4) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.foto {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 30px;
+    border: 5px solid white;
+    transform: rotate(-3deg); /* Toque de foto física */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Contenedor para poner carta y formulario lado a lado */
+.fila-interactiva {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap; /* Para que en móviles se vea uno arriba del otro */
+    margin-bottom: 50px;
+}
+
+.inform {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap; /* Para que en móviles se vea uno arriba del otro */
+    margin-bottom: 50px;
+    background: #f2e8c9;
+    backdrop-filter: blur(5px);
+    border-radius: 30px;
+    color: #1a1a1a;
+    font-size: 20px;
+}
+
+/* Estilo del Formulario */
+.seccion-respuesta {
+    background: rgba(255, 255, 255, 0.05); /* Fondo sutil oscuro */
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px dashed #f2e8c9; /* Color que combine con la hoja */
+    max-width: 350px;
+}
+
+.formulario-amor {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-amor h3 {
+    text-align: center;
+    color: #f2e8c9;
+}
+
+.formulario-amor label {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.formulario-amor input, .formulario-amor textarea {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.formulario-amor button {
+    margin-top: 20px;
+    background: #8b4513;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.formulario-amor button:hover {
+    background: #a0522d;
+    transform: translateY(-2px);
+}
+
+/* La imagen vuelve a estar abajo ocupando su espacio */
+.galeria-inferior {
+    text-align: center;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    
+}
+
+.column-mult {
+    padding: 40px;
+    background: #a0522d;
+    border-radius: 30px;
+}
+.juanfer,
+.mesi,
+.kitty {
+    padding: 30px;
+    border-radius: 50px;
+}
+
+.text {
+    padding: 20px;
+}
